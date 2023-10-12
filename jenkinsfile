@@ -1,0 +1,24 @@
+pipeline{
+    agent any
+    stages{
+        stage("build code"){
+            steps{
+                script{
+
+                sh "mvn clean install"
+
+                }
+            }
+        }
+
+        stage("test code"){
+            steps{
+                script{
+
+                sh "mvn test"
+                
+                }
+            }
+        }
+    }
+}
